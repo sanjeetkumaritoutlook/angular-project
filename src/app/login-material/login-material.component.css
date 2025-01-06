@@ -1,0 +1,18 @@
+mat-label {
+    color: #333;
+    font-size: 16px;
+  }
+  .small-card {
+    width: 400px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    /* You can also apply other styles such as border radius, padding, etc. */
+  }
+  .line-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    /* Optionally, you can add styles such as background color or border for the line */
+  }
+  
+ 

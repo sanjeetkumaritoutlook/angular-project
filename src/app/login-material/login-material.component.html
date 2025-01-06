@@ -1,0 +1,23 @@
+<div class="line-container">
+<mat-card class="centered-card small-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill"  style="display: block;">
+            <!--Make sure the value of the for attribute matches the id attribute of the input field.-->
+            <mat-label for="emailInput">Email</mat-label>
+            <mat-icon matPrefix>person_outline</mat-icon>
+          <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" id="emailInput" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill"  style="display: block;">
+            <mat-label for="passwordInput">Password</mat-label>
+            <mat-icon matPrefix>lock_outline</mat-icon>
+          <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
