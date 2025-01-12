@@ -4,13 +4,18 @@
       (searchTermUpdated)="handleSearchTermUpdate($event)"
     ></fluid-search-box>
     <fluid-table
+      #exportTable
+      [exportOptions]="exportOptions"
       [allowOverflow]="config.allowOverflow"
+      [searchOptions]="searchOptions"
+      [enableSearch]="false"
       [tableId]="config.tableId"
       [headers]="headers"
       [paginated]="false"
       [serverMode]="true"
       [dataItems]="dataItems"
     ></fluid-table>
+    <fluid-button label="Log State" (click)="logExportData()"></fluid-button>
     <fluid-paginator
       [dataItems]="totalItemCount"
       (pageChanged)="handlePageChange($event)"

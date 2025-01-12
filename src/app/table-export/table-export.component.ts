@@ -12,10 +12,24 @@ import { Component,ElementRef,
   styleUrls: ['./table-export.component.css']
 })
 export class TableExportComponent implements OnInit {
+  @ViewChild('exportTable') exportTable: ElementRef;
   config = basicTableConfig;
 
   // Create fake array of total items so paginator uses correct total
   totalItemCount: any[] = [];
+  exportOptions = {
+    pageExport: false,
+    actionConfig: {
+      buttonConfig: {
+        label: 'Export Data',
+      },
+    },
+  };
+
+  searchOptions = {
+    enableSearch: true,
+    dynamicSearch: true
+  };
 
   constructor(private readonly stateSurchargeService: StateSurchargeService) {}
 
@@ -66,5 +80,10 @@ export class TableExportComponent implements OnInit {
 
   ngOnInit() {
     this.totalItemCount = this.stateSurchargeService.getTotalCount();
+  }
+  logExportData() {
+    this.exportTable.nativeElement.getTableState().then((state:any) => {
+      console.log(state);
+    });
   }
 }
