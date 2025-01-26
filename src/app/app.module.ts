@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,13 @@ import { TranslateDataComponent } from './translate-data/translate-data.componen
 import { MissingTranslationHandler, MissingTranslationHandlerParams } from '@ngx-translate/core';
 import { TableExportComponent } from './table-export/table-export.component';
 import { StateSurchargeService } from './state-surcharge.service';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { ItemListComponent } from './item-list/item-list.component';
+import { ItemEffects } from './store/item.effects';
+import { itemReducer } from './store/item.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,7 +46,8 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     MatDesignComponent,
     LoginMaterialComponent,
     TranslateDataComponent,
-    TableExportComponent
+    TableExportComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +72,7 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
         provide: MissingTranslationHandler,
         useClass: CustomMissingTranslationHandler,
       },
-    }),
+    }), StoreModule.forRoot({item: itemReducer}), EffectsModule.forRoot([ItemEffects]), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [StateSurchargeService],
   bootstrap: [AppComponent],
