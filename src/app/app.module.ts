@@ -30,6 +30,7 @@ import { itemReducer } from './store/item.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BookReducer } from './books/book.reducer';
 import { BookListComponent } from './book-list/book-list.component';
+import { BookEffects } from './books/book.effects';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -76,7 +77,7 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
         useClass: CustomMissingTranslationHandler,
       },
     }), StoreModule.forRoot({item: itemReducer, book: BookReducer}),
-     EffectsModule.forRoot([ItemEffects]),
+     EffectsModule.forRoot([ItemEffects,BookEffects]),
       StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [StateSurchargeService],
