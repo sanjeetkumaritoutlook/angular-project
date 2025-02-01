@@ -2,7 +2,8 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './e2e/tests',  // Specify E2E test directory
-  retries: 2, // Retry tests on failure
+  testIgnore: ['**/src/app/**/*.spec.ts'], // Exclude Angular unit test files
+  retries: 2, // Optional: Retry tests on failure
   workers: 1, // Run tests in a single worker (can increase for parallel execution)
   use: {
     baseURL: 'http://localhost:4200', // Angular's default dev server URL
