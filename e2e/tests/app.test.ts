@@ -5,11 +5,11 @@ test.beforeAll(async () => {
 });
 
 test('should load the app', async ({ page }) => {
-   await page.goto('/'); //This will resolve to 'http://localhost:4200/' on playwright config baseURL
+   await page.goto('http://localhost:4200'); //This will resolve to 'http://localhost:4200/' on playwright config baseURL
 
   // Ensure the app title is present
   const title = await page.title();
-  expect(title).toBe('angular-project');  // Replace with your app's title
+  expect(title).toBe('AngularProject');  // Replace with your app's title-> this is index.html title tag
 
   // Check for a specific element, e.g., a header
   //const header = await page.locator('h1');
@@ -17,7 +17,7 @@ test('should load the app', async ({ page }) => {
 });
 
 test('should navigate to a different page', async ({ page }) => {
-  await page.goto('/ngrx-store'); // Home page
+  await page.goto('http://localhost:4200/ngrx-store'); // Home page
  // await page.click('text=About'); // Clicking the "About" link (example)
   //await expect(page).toHaveURL('http://localhost:4200/about'); // Check URL
   //const header = await page.locator('h2');
