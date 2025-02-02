@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './e2e/tests',  // Specify E2E test directory
+  testDir: 'tests',  // Specify E2E test directory
   testIgnore: ['**/src/app/**/*.spec.ts'], // Exclude Angular unit test files
   retries: 2, // Optional: Retry tests on failure
   workers: 1, // Run tests in a single worker (can increase for parallel execution)
