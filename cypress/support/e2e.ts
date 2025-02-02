@@ -15,3 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+before(() => {
+  cy.task('startServer', { cmd: 'ng serve' });
+  cy.wait(5000); // Wait for server to start
+});
