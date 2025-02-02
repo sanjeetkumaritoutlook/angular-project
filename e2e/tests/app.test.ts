@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should load the app', async ({ page }) => {
-  await page.goto('/'); // Navigate to the home page
+   await page.goto('/'); // Navigate to the home page
 
   // Ensure the app title is present
   const title = await page.title();
@@ -12,11 +12,10 @@ test('should load the app', async ({ page }) => {
  // await expect(header).toHaveText('Welcome to Angular');
 });
 
-/* test('should navigate to a different page', async ({ page }) => {
-  await page.goto('/'); // Home page
-  await page.click('text=About'); // Clicking the "About" link (example)
-  await expect(page).toHaveURL('http://localhost:4200/about'); // Check URL
-  const header = await page.locator('h2');
-  await expect(header).toHaveText('About Us');  // Verify about page text
+test('should navigate to a different page', async ({ page }) => {
+  await page.goto('/ngrx-store'); // Home page
+ // await page.click('text=About'); // Clicking the "About" link (example)
+  //await expect(page).toHaveURL('http://localhost:4200/about'); // Check URL
+  //const header = await page.locator('h2');
+  //await expect(header).toHaveText('About Us');  // Verify about page text
 });
-*/
