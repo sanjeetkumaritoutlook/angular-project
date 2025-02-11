@@ -1,0 +1,8 @@
+<h3>localStorage (persist until removed) , sessionStorage (persist in session only)</h3>
+<ul>
+    <li *ngFor="let user of users">
+      {{ user.id }} - {{ user.name }}
+    </li>
+  </ul>
+  <button (click)="addUser()">Add User</button>
+  
