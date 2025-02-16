@@ -32,6 +32,7 @@ import { BookReducer } from './books/book.reducer';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookEffects } from './books/book.effects';
 import { LocalstorageDemoComponent } from './localstorage-demo/localstorage-demo.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -68,6 +69,7 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     MatIconModule,
     CustomerDashboardModule,
     HttpClientModule, // Import HttpClientModule
+    DynamicFormComponent,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
