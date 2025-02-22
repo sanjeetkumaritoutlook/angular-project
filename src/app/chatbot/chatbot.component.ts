@@ -17,27 +17,27 @@ export class ChatbotComponent {
   loading: boolean = false;
 
   constructor(private chatService: ChatService) {}
+//If you're sending too many requests quickly, add a delay between requests.
 
   sendMessage() {
-    if (!this.userInput.trim()) return;
-
-    // Add user message to chat
+    if (!this.userInput.trim() || this.loading) return; // Prevent spam requests
+  
     this.messages.push({ sender: 'user', text: this.userInput });
     this.loading = true;
-
-    // Send message to OpenAI
-    this.chatService.sendMessage(this.userInput).subscribe(
-      (response) => {
-        const aiResponse = response.choices[0]?.message?.content || 'No response';
-        this.messages.push({ sender: 'bot', text: aiResponse });
-        this.loading = false;
-      },
-      (error) => {
-        this.messages.push({ sender: 'bot', text: 'Error getting response. Try again!' });
-        this.loading = false;
-      }
-    );
-
-    this.userInput = ''; // Clear input field
+  
+    setTimeout(() => { // Add a delay to reduce requests
+      this.chatService.sendMessage(this.userInput).subscribe(
+        (response) => {
+          const aiResponse = response.choices[0]?.message?.content || 'No response';
+          this.messages.push({ sender: 'bot', text: aiResponse });
+          this.loading = false;
+        },
+        (error) => {
+          this.messages.push({ sender: 'bot', text: 'Too many requests! Try again later.' });
+          this.loading = false;
+        }
+      );
+    }, 1000); // Delay of 1 second
   }
+  
 }
