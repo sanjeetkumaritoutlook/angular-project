@@ -8,15 +8,15 @@ import { environment } from 'src/environments/environment';
 })
 export class ChatService {
   //private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  private apiUrl = ''; // Safe API URL
-  private open = ''; 
+  private apiUrl = environment.openaiApiUrl; // Safe API URL
+  private apiKey = environment.apiKey;
 
   constructor(private http: HttpClient) {}
 
   sendMessage(message: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.open}`,
+      Authorization: `Bearer ${this.apiKey}`,
     });
 
     const body = {
