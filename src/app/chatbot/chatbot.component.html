@@ -1,14 +1,7 @@
 <div class="chat-container">
-    <div class="chat-box">
-      <div *ngFor="let msg of messages" [ngClass]="{'user-message': msg.sender === 'user', 'bot-message': msg.sender === 'bot'}">
-        {{ msg.text }}
-      </div>
-      <div *ngIf="loading" class="loading">AI is typing...</div>
-    </div>
-  
-    <div class="input-box">
-      <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Type your message..." />
-      <button (click)="sendMessage()" [disabled]="loading">Send</button>
-    </div>
+  <div *ngFor="let msg of messages">
+    <strong>{{ msg.role }}:</strong> {{ msg.text }}
   </div>
-  
+  <input [(ngModel)]="userInput" placeholder="Ask something..." />
+  <button (click)="sendMessage()">Send</button>
+</div>
