@@ -9,14 +9,14 @@ import { environment } from 'src/environments/environment';
 export class ChatService {
   //private apiUrl = 'https://api.openai.com/v1/chat/completions';
   private apiUrl = environment.openaiApiUrl; // Safe API URL
-  private apiKey = ''; // Safe API key
+  private open = environment.open; 
 
   constructor(private http: HttpClient) {}
 
   sendMessage(message: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.apiKey}`,
+      Authorization: `Bearer ${this.open}`,
     });
 
     const body = {
