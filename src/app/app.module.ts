@@ -33,6 +33,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookEffects } from './books/book.effects';
 import { LocalstorageDemoComponent } from './localstorage-demo/localstorage-demo.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -54,7 +55,8 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     TableExportComponent,
     ItemListComponent,
     BookListComponent,
-    LocalstorageDemoComponent
+    LocalstorageDemoComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,

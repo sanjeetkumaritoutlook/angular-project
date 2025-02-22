@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ChatService {
+  //private apiUrl = 'https://api.openai.com/v1/chat/completions';
+  private apiUrl = environment.openaiApiUrl; // Safe API URL
+  private apiKey = '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'; // Replace with your API key
+
+  constructor(private http: HttpClient) {}
+
+  sendMessage(message: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.apiKey}`,
+    });
+
+    const body = {
+      model: 'gpt-3.5-turbo', // Use 'gpt-4' if available
+      messages: [{ role: 'user', content: message }],
+      temperature: 0.7,
+    };
+
+    return this.http.post(this.apiUrl, body, { headers });
+  }
+}
