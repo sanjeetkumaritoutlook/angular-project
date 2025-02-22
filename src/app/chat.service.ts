@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class ChatService {
   //private apiUrl = 'https://api.openai.com/v1/chat/completions';
   private apiUrl = environment.openaiApiUrl; // Safe API URL
-  private apiKey = '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'; // Replace with your API key
+  private apiKey = environment.apiKey;
 
   constructor(private http: HttpClient) {}
 
