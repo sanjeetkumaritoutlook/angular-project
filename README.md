@@ -10,6 +10,8 @@ default deprecated from angular 15
 
 ng generate environments
 
+https://dev.to/this-is-angular/angular-15-what-happened-to-environmentts-koh
+
 
 ## Development server
 
