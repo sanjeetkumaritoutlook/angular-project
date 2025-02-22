@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class ChatService {
   //private apiUrl = 'https://api.openai.com/v1/chat/completions';
   private apiUrl = environment.openaiApiUrl; // Safe API URL
-  private apiKey = environment.apiKey;
+  private apiKey = ''; // Safe API key
 
   constructor(private http: HttpClient) {}
 
