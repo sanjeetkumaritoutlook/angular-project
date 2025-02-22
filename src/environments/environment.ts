@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
   openaiApiUrl: 'https://api.openai.com/v1/chat/completions', // API URL only
-  apiKey : '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',// Replace with your API key
+  apiKey : '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',// Replace with your API key
 };
