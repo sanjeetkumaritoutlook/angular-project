@@ -28,3 +28,15 @@ What’s New?
 ✅ Use Google Gemini if:
 ✔ You want a free AI API with no payment required.
 ✔ You need basic AI chatbot features for free.
+
+Below are the enhancements I'm adding:
+
+✅ Avatars (User & AI images)
+✅ Typing Indicator (Shows "AI is typing..." while fetching a response)
+✅ Smooth Animations (Fade-in for messages)
+
+New Features & Improvements
+✔ User & AI Avatars (Random generated avatars)
+✔ Typing Indicator (Shows "AI is typing..." with animated dots)
+✔ Smooth Animations (Messages fade in for a modern feel)
+
