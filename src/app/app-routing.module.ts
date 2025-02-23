@@ -7,6 +7,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { LocalstorageDemoComponent } from './localstorage-demo/localstorage-demo.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { CounterComponent } from './counter/counter.component';
 const routes: Routes = [
   { path: 'translate-text', component: TranslateDataComponent },
   { path: 'table-export', component: TableExportComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'localstorage-demo', component: LocalstorageDemoComponent },
   { path: 'openai-chat', component: ChatbotComponent },
   { path: 'form-array', component: DynamicFormComponent },
+  { path: 'jest-counter', component: CounterComponent },
   { path: 'customers', 
   loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) }, 
 { path: 'orders',
