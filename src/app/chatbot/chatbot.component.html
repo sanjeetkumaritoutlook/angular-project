@@ -1,7 +1,12 @@
 <div class="chat-container">
-  <div *ngFor="let msg of messages">
-    <strong>{{ msg.role }}:</strong> {{ msg.text }}
+  <div class="chat-messages">
+    <div *ngFor="let msg of messages" [ngClass]="msg.role">
+      <strong>{{ msg.role }}:</strong> 
+      <p [innerHTML]="formatText(msg.text)"></p>
+    </div>
   </div>
-  <input [(ngModel)]="userInput" placeholder="Ask something..." />
-  <button (click)="sendMessage()">Send</button>
+  <div class="chat-input">
+    <input [(ngModel)]="userInput" placeholder="Type your message..." (keyup.enter)="sendMessage()" />
+    <button (click)="sendMessage()">Send</button>
+  </div>
 </div>

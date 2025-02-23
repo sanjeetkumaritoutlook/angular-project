@@ -28,5 +28,10 @@ export class ChatbotComponent {
     });
 
     this.userInput = '';
-  }  
+  }
+
+  // ✅ Format text: Replace newlines with <br> and make bullet points work
+  formatText(text: string): string {
+    return text.replace(/\n/g, '<br>'); // Convert newlines to <br> for proper rendering
+  } 
 }
