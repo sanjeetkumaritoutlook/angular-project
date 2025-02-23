@@ -1,4 +1,9 @@
-<div class="chat-container">
+<div class="chat-container" [class.dark-mode]="isDarkMode">
+  <!-- Dark Mode Toggle -->
+  <button class="dark-mode-toggle" (click)="toggleDarkMode()">
+    {{ isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode' }}
+  </button>
+
   <div class="chat-messages">
     <div *ngFor="let msg of messages" [ngClass]="msg.role" class="message">
       <img [src]="msg.role === 'User' ? userAvatar : aiAvatar" class="avatar" />
@@ -10,14 +15,14 @@
     <!-- Typing Indicator -->
     <div *ngIf="isTyping" class="typing-indicator">
       <img [src]="aiAvatar" class="avatar" />
-      <div class="dots">
-        <span></span><span></span><span></span>
-      </div>
+      <div class="dots"><span></span><span></span><span></span></div>
     </div>
   </div>
 
+  <!-- Chat Input -->
   <div class="chat-input">
-    <input [(ngModel)]="userInput" placeholder="Type your message..." (keyup.enter)="sendMessage()" />
+    <input [(ngModel)]="userInput" placeholder="Type a message..." (keyup.enter)="sendMessage()" />
     <button (click)="sendMessage()">Send</button>
+    <button class="mic-button" (click)="startVoiceInput()">🎤</button>
   </div>
 </div>

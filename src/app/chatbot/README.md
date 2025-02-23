@@ -40,3 +40,20 @@ New Features & Improvements
 ✔ Typing Indicator (Shows "AI is typing..." with animated dots)
 ✔ Smooth Animations (Messages fade in for a modern feel)
 
+Speech-to-Text (Voice Input 🎤) → Click a button to talk instead of typing.
+✅ Dark Mode 🌙 → Toggle between light & dark themes.
+✅ Saving Chat History 📜 → Keeps chat history even after refresh.
+✅ More Styling Improvements 🎨 → Even smoother UI.
+
+your enhanced chatbot with:
+
+✅ Speech-to-Text 🎤 (Voice input using Web Speech API)
+✅ Dark Mode 🌙 (Toggle between light & dark themes)
+✅ Saving Chat History 📜 (Stored in localStorage)
+✅ Better Styling 🎨 (Smoother UI, rounded messages, dark/light styles)
+
+New Features Added
+✅ 🎤 Voice Input (Speech-to-text support)
+✅ 🌙 Dark Mode (Switch themes, remembers preference)
+✅ 📜 Chat History (Saves past messages)
+✅ ✨ Smooth UI Enhancements
