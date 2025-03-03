@@ -7,24 +7,18 @@ import { SentimentService } from '../sentiment.service';
   styleUrls: ['./analysis.component.css']
 })
 export class AnalysisComponent {
-  textInput = "";
-  sentimentScore: number | null = null;
-  sentimentMagnitude: number | null = null;
-  sentimentLabel: string | null = null;
+  textToAnalyze: string = '';
+  sentimentResult: any;
 
-  constructor(private sentimentService: SentimentService) {}
+  constructor(private nlpService: SentimentService) {}
 
-  analyzeText() {
-    if (!this.textInput.trim()) return;
-
-    this.sentimentService.analyzeSentiment(this.textInput).subscribe(
-      (response: any) => {
-        this.sentimentScore = response.documentSentiment.score;
-        this.sentimentMagnitude = response.documentSentiment.magnitude;
-        this.sentimentLabel = this.getSentimentLabel(this.sentimentScore ?? 0);
+  analyzeSentiment() {
+    this.nlpService.analyzeSentiment(this.textToAnalyze).subscribe(
+      (result: any) => {
+        this.sentimentResult = result.documentSentiment;
       },
       (error) => {
-        console.error("Error analyzing sentiment:", error);
+        console.error('Error analyzing sentiment:', error);
       }
     );
   }

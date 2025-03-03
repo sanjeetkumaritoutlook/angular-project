@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,15 +11,19 @@ export class SentimentService {
 
   constructor(private http: HttpClient) {}
   analyzeSentiment(text: string): Observable<any> {
-    const body = {
+    const requestBody = {
       document: {
-        type: "PLAIN_TEXT",
-        language: "en",
-        content: text // Make sure 'text' is defined
+        content: text,
+        type: 'PLAIN_TEXT',
       },
-       encodingType: "UTF8"
     };
 
-    return this.http.post<any>(this.apiUrl, body);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    console.log("Request body:", requestBody); // Add this line
+    return this.http.post(this.apiUrl, requestBody, httpOptions);
   }
 }

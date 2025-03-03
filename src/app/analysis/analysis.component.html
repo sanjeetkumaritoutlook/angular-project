@@ -1,11 +1,7 @@
-<div class="container">
-  <h1>Google Sentiment Analysis</h1>
-  <textarea [(ngModel)]="textInput" placeholder="Enter text here..."></textarea>
-  <button (click)="analyzeText()">Analyze</button>
+<textarea [(ngModel)]="textToAnalyze" placeholder="Enter text to analyze"></textarea>
+<button (click)="analyzeSentiment()">Analyze Sentiment</button>
 
-  <div *ngIf="sentimentScore !== null">
-    <h3>Sentiment Score: {{ sentimentScore }}</h3>
-    <h3>Sentiment Magnitude: {{ sentimentMagnitude }}</h3>
-    <h3>Sentiment: {{ sentimentLabel }}</h3>
-  </div>
+<div *ngIf="sentimentResult">
+  <p>Score: {{ sentimentResult.score }}</p>
+  <p>Magnitude: {{ sentimentResult.magnitude }}</p>
 </div>
