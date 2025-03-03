@@ -12,6 +12,11 @@ ng generate environments
 
 https://dev.to/this-is-angular/angular-15-what-happened-to-environmentts-koh
 
+## how to commit the code , as husky is enabled here
+
+To avoid Husky hooks, you can use the --no-verify 
+
+git commit -m "ffgfhggh" --no-verify 
 
 ## Development server
 
