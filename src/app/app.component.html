@@ -15,6 +15,26 @@
 <button type="button" routerLink="/customers">Customers</button>
 <button type="button" routerLink="/orders">Orders</button>
 <button type="button" routerLink="">Home</button>
+
+<h3 style="color:rebeccapurple">tool is called Storm, and it's developed by researchers at Stanford University.</h3>
+<p>URL:</p><a href="https://storm.genie.stanford.edu/" target="_blank">Visit</a>
+<p>Github:</p><a href="https://github.com/stanford-oval/storm/" target="_blank">Visit</a>
+
+<h3 style="color:brown">With Inputs</h3>
+<h4 style="color:brown">the parent component should bind values using property binding ([inputName])</h4>
+<app-card-one [title]="cardTitle" [content]="cardContent"></app-card-one>
+<h3 style="color:blueviolet">With projected content</h3>
+<h4 style="color:blueviolet">Angular does not process bindings inside content projection.</h4>
+<app-card-two>
+    <h3 card-title>Dynamic Card Title</h3>
+    <p card-content>This content is coming from the parent component.</p>
+  </app-card-two>
+<h3 style="color:cornflowerblue">Using dynamic content in ng-content using ng-container in child compoenent</h3>
+  <app-card-three>
+    <h3 card-title>{{ cardTitle }}</h3>
+    <p card-content>{{ cardContent }}</p>
+  </app-card-three>
+
 <h1>Navigation links</h1>
 <nav style="display: flex; flex-direction: column; gap: 10px;">
 <a routerLink="translate-text" routerLinkActive="active">i18n Translate</a>

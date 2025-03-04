@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-project';
+  cardTitle = 'Dynamic Card Title';
+  cardContent = 'This content is coming from the parent component.';
 }
