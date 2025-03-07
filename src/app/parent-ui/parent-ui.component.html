@@ -1,0 +1,20 @@
+<div>
+    <h2>Parent UI</h2>
+  
+    <app-micro-ui></app-micro-ui>
+    <app-micro-ui></app-micro-ui>
+  
+    <button (click)="saveAll()">Save</button>
+    <button (click)="attemptNavigationToAnotherPage()">Go to another page</button>
+  
+    <!-- Unsaved Changes Popup -->
+    <div *ngIf="showUnsavedChangesModal" class="modal">
+      <div class="modal-content">
+        <p>You have unsaved changes. Do you want to save before leaving?</p>
+        <button (click)="saveAll(); confirmNavigation()">Save & Leave</button>
+        <button (click)="confirmNavigation()">Leave Without Saving</button>
+        <button (click)="cancelNavigation()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  

@@ -9,6 +9,8 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { CounterComponent } from './counter/counter.component';
 import { AnalysisComponent } from './analysis/analysis.component';
+import { ParentUiComponent } from './parent-ui/parent-ui.component';
+import { canDeactivateGuard } from './can-deactivate.guard';
 const routes: Routes = [
   { path: 'translate-text', component: TranslateDataComponent },
   { path: 'table-export', component: TableExportComponent },
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'form-array', component: DynamicFormComponent },
   { path: 'jest-counter', component: CounterComponent },
   { path: 'sentiment-analysis', component: AnalysisComponent },
+  { path: 'parent-ui', component: ParentUiComponent, canDeactivate: [canDeactivateGuard] },
   { path: 'customers', 
   loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) }, 
 { path: 'orders',

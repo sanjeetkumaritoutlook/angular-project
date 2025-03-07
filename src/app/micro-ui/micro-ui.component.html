@@ -1,0 +1,12 @@
+<div class="micro-ui-container">
+    <form [formGroup]="form">
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" />
+  
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email" />
+  
+      <div *ngIf="form.dirty" class="unsaved-warning">⚠️ You have unsaved changes!</div>
+    </form>
+  </div>
+  

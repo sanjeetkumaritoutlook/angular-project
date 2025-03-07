@@ -39,6 +39,8 @@ import { AnalysisComponent } from './analysis/analysis.component';
 import { CardOneComponent } from './card-one/card-one.component';
 import { CardTwoComponent } from './card-two/card-two.component';
 import { CardThreeComponent } from './card-three/card-three.component';
+import { MicroUiComponent } from './micro-ui/micro-ui.component';
+import { ParentUiComponent } from './parent-ui/parent-ui.component';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -66,7 +68,9 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     AnalysisComponent,
     CardOneComponent,
     CardTwoComponent,
-    CardThreeComponent
+    CardThreeComponent,
+    MicroUiComponent,
+    ParentUiComponent
   ],
   imports: [
     BrowserModule,
