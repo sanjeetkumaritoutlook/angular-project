@@ -1,8 +1,8 @@
 <div>
     <h2>Parent UI</h2>
   
-    <app-micro-ui></app-micro-ui>
-    <app-micro-ui></app-micro-ui>
+    <app-micro-ui (formDataChanged)="updateSharedData($event)"></app-micro-ui>
+    <app-micro-ui-b [data]="sharedData"></app-micro-ui-b>
   
     <button (click)="saveAll()">Save</button>
     <button (click)="attemptNavigationToAnotherPage()">Go to another page</button>

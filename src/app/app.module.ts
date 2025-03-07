@@ -41,6 +41,7 @@ import { CardTwoComponent } from './card-two/card-two.component';
 import { CardThreeComponent } from './card-three/card-three.component';
 import { MicroUiComponent } from './micro-ui/micro-ui.component';
 import { ParentUiComponent } from './parent-ui/parent-ui.component';
+import { MicroUiBComponent } from './micro-ui-b/micro-ui-b.component';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -70,7 +71,8 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     CardTwoComponent,
     CardThreeComponent,
     MicroUiComponent,
-    ParentUiComponent
+    ParentUiComponent,
+    MicroUiBComponent
   ],
   imports: [
     BrowserModule,

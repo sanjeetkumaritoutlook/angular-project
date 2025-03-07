@@ -1,5 +1,5 @@
 <div class="micro-ui-container">
-    <form [formGroup]="form">
+    <form [formGroup]="form" (change)="onFormChange()">
       <label for="name">Name:</label>
       <input id="name" type="text" formControlName="name" />
   

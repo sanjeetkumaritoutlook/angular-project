@@ -11,6 +11,8 @@ export class ParentUiComponent {
   constructor(private router: Router) {}
   showUnsavedChangesModal = false;
   pendingNavigation: any = null;
+  sharedData: any = {}; // Store shared data
+
 
   hasUnsavedChanges(): boolean {
     return this.microUIs?.some(ui => ui.isDirty());
@@ -55,5 +57,8 @@ export class ParentUiComponent {
   cancelNavigation() {
     this.showUnsavedChangesModal = false;
     this.pendingNavigation = null;
+  }
+  updateSharedData(data: any) {
+    this.sharedData = data; // Update state
   }
 }
