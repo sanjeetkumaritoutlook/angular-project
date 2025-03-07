@@ -1,0 +1,9 @@
+<h2>Micro UI A</h2>
+<app-micro-ui-c *ngFor="let form of forms" [form]="form"></app-micro-ui-c>
+
+<h2>Micro UI B</h2>
+<app-micro-ui-d *ngFor="let formB of formsB" [form]="formB"></app-micro-ui-d>
+
+<button (click)="attemptNavigationToAnotherPage()">
+  Go to another page
+</button>

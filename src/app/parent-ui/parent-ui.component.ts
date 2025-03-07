@@ -25,6 +25,7 @@ export class ParentUiComponent {
 
     if (dataToSave.length > 0) {
       this.saveDataToDB(dataToSave);
+      this.router.navigate(['/table-export']);
     }
   }
 

@@ -1,0 +1,10 @@
+<form [formGroup]="form">
+    <label for="age">Age:</label>
+    <input id="age" type="number" formControlName="age" />
+  
+    <label for="phone">Phone:</label>
+    <input id="phone" type="text" formControlName="phone" />
+  
+    <div *ngIf="form.dirty" class="unsaved-warning">⚠️ Unsaved changes!</div>
+  </form>
+  

@@ -42,6 +42,9 @@ import { CardThreeComponent } from './card-three/card-three.component';
 import { MicroUiComponent } from './micro-ui/micro-ui.component';
 import { ParentUiComponent } from './parent-ui/parent-ui.component';
 import { MicroUiBComponent } from './micro-ui-b/micro-ui-b.component';
+import { MicroUiCComponent } from './micro-ui-c/micro-ui-c.component';
+import { MicroUiDComponent } from './micro-ui-d/micro-ui-d.component';
+import { ParentUiBComponent } from './parent-ui-b/parent-ui-b.component';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -72,7 +75,10 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     CardThreeComponent,
     MicroUiComponent,
     ParentUiComponent,
-    MicroUiBComponent
+    MicroUiBComponent,
+    MicroUiCComponent,
+    MicroUiDComponent,
+    ParentUiBComponent
   ],
   imports: [
     BrowserModule,

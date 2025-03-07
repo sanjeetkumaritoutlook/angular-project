@@ -13,5 +13,5 @@ export const canDeactivateGuard: CanDeactivateFn<ParentUiComponent> = (component
     component.showUnsavedChangesModal = true;
     return false;
   }
-  return true;
+  return true; // Allow navigation if no changes
 };
