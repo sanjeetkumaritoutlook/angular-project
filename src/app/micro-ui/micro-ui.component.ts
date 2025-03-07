@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup ,Validators } from '@angular/forms';
 //A proper web-component  runs outside Angular’s change detection and outside  Angular’s lifecycle
 //A proper web-component -You cannot directly access it using 
 // @ViewChildren to check .isDirty() ,because Angular doesn’t recognize it as an Angular component.
+//Web Components exist outside Angular’s component tree. Instead, you need to communicate using Custom Events.
 //In that case, two options for proper web-component:
 //✅ Option 1: Use window.addEventListener to Detect Changes,it should dispatch a custom event when data changes.
 //✅ Option 2: Listen for Events in ParentUiComponent

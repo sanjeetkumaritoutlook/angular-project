@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA, isDevMode } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA, isDevMode,Injector ,Type } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,6 +45,11 @@ import { MicroUiBComponent } from './micro-ui-b/micro-ui-b.component';
 import { MicroUiCComponent } from './micro-ui-c/micro-ui-c.component';
 import { MicroUiDComponent } from './micro-ui-d/micro-ui-d.component';
 import { ParentUiBComponent } from './parent-ui-b/parent-ui-b.component';
+import { WebUiAComponent } from './web-components/web-ui-a/web-ui-a.component';
+import { WebUiBComponent } from './web-components/web-ui-b/web-ui-b.component';
+import { ParentWebComponent } from './parent-web/parent-web.component';
+//no compatible version for angular v16, so used v15, v17 works 
+import { createCustomElement } from '@angular/elements';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -78,7 +83,10 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     MicroUiBComponent,
     MicroUiCComponent,
     MicroUiDComponent,
-    ParentUiBComponent
+    ParentUiBComponent,
+    WebUiAComponent,
+    WebUiBComponent,
+    ParentWebComponent
   ],
   imports: [
     BrowserModule,
@@ -112,4 +120,29 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(private injector: Injector) {
+  }
+  ngDoBootstrap() {
+     // register create opportunity component
+     this.registerMicroUI(
+      'web-ui-a-component',
+      WebUiAComponent,
+      this.injector
+    );
+
+    // register insured component
+    this.registerMicroUI(
+      'web-ui-b-component',
+      WebUiBComponent,
+      this.injector
+    );
+
+  }
+  registerMicroUI(name: string, component: Type<any>, injector: Injector) {
+    if (!customElements.get(name)) {
+      const microUI = createCustomElement(component, { injector });
+      customElements.define(name, microUI);
+    }
+  }
+}
