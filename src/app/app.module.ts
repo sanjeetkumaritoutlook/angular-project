@@ -50,6 +50,9 @@ import { WebUiBComponent } from './web-components/web-ui-b/web-ui-b.component';
 import { ParentWebComponent } from './parent-web/parent-web.component';
 //no compatible version for angular v16, so used v15, v17 works 
 import { createCustomElement } from '@angular/elements';
+import { WebOneComponent } from './web-components/web-one/web-one.component';
+import { WebTwoComponent } from './web-components/web-two/web-two.component';
+import { NewParentComponent } from './new-parent/new-parent.component';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -86,7 +89,10 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     ParentUiBComponent,
     WebUiAComponent,
     WebUiBComponent,
-    ParentWebComponent
+    ParentWebComponent,
+    WebOneComponent,
+    WebTwoComponent,
+    NewParentComponent
   ],
   imports: [
     BrowserModule,
