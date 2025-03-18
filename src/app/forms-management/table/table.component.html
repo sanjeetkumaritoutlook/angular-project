@@ -1,0 +1,32 @@
+<fluid-loading-spinner centered="true" loadingMessage="Refreshing Forms" *ngIf="tableLoading; else table"></fluid-loading-spinner>
+
+<ng-template #table>
+    <fluid-table #fluidTable
+                 [tableId]="tableId"
+               
+                 [allowOverflow]="allowOverflow"
+                 [selectable]="selectable"
+                 [selectableDataPath]="selectableDataPath"
+                 [columnAdjustments]="columnAdjustments"
+                 [headers]="headers"
+                 [dataLoading]="dataLoading"
+                 [maxHeight]= "maxHeight"
+                 [minHeight]= "minHeight"
+                 [dataItems]="dataItems$ | async"
+                 [selectableHeaderLabel]="selectableHeaderLabel"
+                
+                 [enableSearch]="enableSearch"
+                 [searchOptions]="searchOptions"
+                 [stateful]="true"
+                 [stickyHeaders]="true"
+                 [disableRowIf]="disableRowIf"
+                 [tableActions]="tableActions"
+                 [disableActiveFiltering]="true"
+                
+                 [formActionsConfig]="formActionsConfig"
+                 [paginationItemsPerPageOptions]="paginationNumber"
+                 [selectionOptions]="tableSelectionOptions">
+
+                 
+    </fluid-table>
+</ng-template>

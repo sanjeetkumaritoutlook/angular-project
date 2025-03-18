@@ -1,0 +1,16 @@
+<app-table 
+[dataItems$]="dataItems$"
+[features]="features"
+[headers]="headers"
+[tableId]="tableType"
+[dataLoading]="dataLoading"
+
+[additionalInfo]="additionalInfo"
+[maxHeight]= "tableMaxHeight"
+[minHeight]= "tableMinHeight"
+[allowOverflow]="allowOverflow"
+[quoteNumber]="quoteNumber"
+[searchBoxPlaceholder]="searchBoxPlaceholder"
+[viewOnlyObservable]="viewOnlySubject.asObservable()"
+[clearFilterObservable]="clearFilterSubject.asObservable()">
+</app-table>

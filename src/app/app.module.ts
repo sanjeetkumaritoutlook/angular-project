@@ -53,6 +53,10 @@ import { createCustomElement } from '@angular/elements';
 import { WebOneComponent } from './web-components/web-one/web-one.component';
 import { WebTwoComponent } from './web-components/web-two/web-two.component';
 import { NewParentComponent } from './new-parent/new-parent.component';
+import { TableComponent } from './forms-management/table/table.component';
+import { FormsSelectionComponent } from './forms-management/forms-selection/forms-selection.component';
+import { QuoteFormsComponent } from './forms-management/quote-forms/quote-forms.component';
+import { ContentComponent } from './forms-management/content/content.component';
 
 // Required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -92,7 +96,11 @@ export class CustomMissingTranslationHandler implements MissingTranslationHandle
     ParentWebComponent,
     WebOneComponent,
     WebTwoComponent,
-    NewParentComponent
+    NewParentComponent,
+    TableComponent,
+    FormsSelectionComponent,
+    QuoteFormsComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,7 @@ import { ParentWebComponent } from './parent-web/parent-web.component';
 import { canDeactivateWebGuard } from './can-deactivate-web.guard';
 import { NewParentComponent } from './new-parent/new-parent.component';
 import { UnsavedChangesGuard } from './unsaved-changes.guard';
+import { ContentComponent } from './forms-management/content/content.component';
 const routes: Routes = [
   { path: 'translate-text', component: TranslateDataComponent },
   { path: 'table-export', component: TableExportComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'parent-ui', component: ParentUiComponent, canDeactivate: [canDeactivateGuard] },
   { path: 'parent-ui-b', component: ParentUiBComponent,canDeactivate: [canDeactivateTwoGuard] },
   { path: 'parent-web', component: ParentWebComponent,canDeactivate: [canDeactivateWebGuard] },
+  { path: 'nested-child', component: ContentComponent },
   {
     path: 'new-page',
     component: NewParentComponent,
