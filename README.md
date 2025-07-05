@@ -12,6 +12,14 @@ ng generate environments
 
 https://dev.to/this-is-angular/angular-15-what-happened-to-environmentts-koh
 
+## LLM models marketplace playground
+
+https://github.com/marketplace/models/azure-openai/gpt-4-1
+
+Microsoft Fabric UI based on Fast:
+
+https://www.npmjs.com/package/@fabric-msft/fabric-web?activeTab=readme
+
 ## how to commit the code , as husky is enabled here
 
 To avoid Husky hooks, you can use the --no-verify 
